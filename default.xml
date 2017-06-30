@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-	 <remote name="costinm" fetch="git://github.com/costinm/" />
-	 <default remote="costinm" revision="master" />
-         <project name="envoy" />
-	 <project name="mixer" path="src/mixer" />
+    <remote name="istio" fetch="git://github.com/istio/"/>
+    <remote name="github" fetch="git://github.com/"/>
+    <remote name="costinm" fetch="git://github.com/costinm/"/>
+    <remote name="google" fetch="git://github.com/google"/>
+
+    <default remote="costinm" revision="master" sync-j="4"  />
+
+    <project name="envoy"/>
+
+    <project name="mixer" path="src/mixer"/>
+
+    <project name="mixerclient" path="src/mixerclient" remote="costinm" revision="costin"/>
+
+    <project name="api" path="src/api" revision="costin"/>
+
+    <project name="nodejs/http-parser" path="src/http-parser" remote="github"/>
+
+    <project path="src/lightstep-tracer" remote="github" name="lightstep/lightstep-tracer-cpp"/>
+
+    <project path="src/lightstep-tracer-common" remote="github" name="lightstep/lightstep-tracer-common"/>
+
+    <project path="src/spdlog" remote="github" name="gabime/spdlog"/>
+
+    <project path="src/libevent" remote="github" name="libevent/libevent"/>
+
+    <project path="src/nghttp2" remote="github" name="nghttp2/nghttp2"/>
+
+    <project path="src/tclap" remote="github" name="eile/tclap"/>
+
+    <project path="src/protobuf" remote="google" name="protobuf"
+             revision="refs/tags/v3.2.0"/>
+
+    <project path="src/boringssl" remote="github" name="google/boringssl" revision="chromium-stable"/>
+
+    <project path="src/backward" remote="github" name="bombela/backward-cpp"/>
+
+    <project path="src/cares" remote="github" name="c-ares/c-ares"/>
+
+    <project path="src" name="istio-all"/>
+
 </manifest>
