@@ -7,8 +7,9 @@
     <remote name="google" fetch="git://github.com/google"/>
 
     <default remote="costinm" revision="master" sync-j="4"  />
-    
-    <project name="envoy" />
+
+    <!-- Master branch, with 32-bit patches for pi -->
+    <project name="envoy" revisions="master-32bit"/>
 
     <project name="mixerclient" path="src/mixerclient" remote="costinm" revision="costin"/>
 
