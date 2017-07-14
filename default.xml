@@ -21,13 +21,10 @@
     Forks from unary branch, using same envoy
      -->
     <project name="mixerclient" path="src/mixerclient" remote="costinm" revision="costin"/>
+
     <project path="src/proxy" name="proxy" revision="costin" />
 
-    <project path="src/lightstep-tracer" remote="github" name="lightstep/lightstep-tracer-cpp"
-        revision="refs/tags/v0_36"/>
-
-    <project path="src/protobuf" remote="google" name="protobuf"
-             revision="refs/tags/v3.2.0"/>
+    <project path="src/protobuf" remote="google" name="protobuf" revision="refs/tags/v3.2.0"/>
 
     <project path="src/boringssl" remote="github" name="google/boringssl" revision="chromium-stable" />
 
@@ -36,10 +33,7 @@
     <!-- Stable APIs/build from master. Releases should set the tested tags -->
     <project name="nodejs/http-parser" path="src/http-parser" remote="github"/>
 
-    <project name="api" path="src/api" revision="costin"/>
-
-    <project name="mixer" path="src/mixer"/>
-
+    <project path="src/lightstep-tracer" remote="github" name="lightstep/lightstep-tracer-cpp" revision="refs/tags/v0_36"/>
     <project path="src/lightstep-tracer-common" remote="github" name="lightstep/lightstep-tracer-common"/>
 
     <project path="src/spdlog" remote="github" name="gabime/spdlog"/>
@@ -57,5 +51,26 @@
     <!-- Toolchains for cross compilation -->
     <!-- Path name similar with android -->
     <project path="prebuilts/linux-x86/pi" remote="github" name="raspberrypi/tools"/>
+
+    <project path="tools/bazelbuild/rules_go" remote="github" name="bazelbuild/rules_go" />
+
+    <!--
+     Go projects and dependencies
+    -->
+    <project path="src/istio.io/istio" remote="github" name="istio/istio"/>
+    <project path="src/istio.io/pilot" remote="github" name="istio/pilot"/>
+    <project path="src/istio.io/mixer" remote="github" name="costinm/mixer"/>
+    <project path="src/istio.io/auth" remote="github" name="istio/auth"/>
+    <project path="src/istio.io/api" remote="github" name="costinm/api" revision="costin"/>
+
+    <!-- Dependencies for pilot/mixer -->
+
+
+    <!--
+     Useful examples from envoy, not used in the build but for reference
+    -->
+    <project path="src/envoy-filter-example" remote="github" name="lyft/envoy-filter-example"/>
+    <project path="src/github.com/lyft/ratelimit" remote="github" name="lyft/ratelimit"/>
+
 
 </manifest>
