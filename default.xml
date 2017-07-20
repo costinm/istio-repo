@@ -20,12 +20,10 @@
  -->
     <project name="lyft/envoy" path="envoy"/>
 
-    <!-- 'canary' removed from eds - breaks envoy -->
-    <project path="src/envoy-api" name="lyft/envoy-api"
-        revision="89c068ddbdb8ac5e513351c8772efc924787aad1"/>
+    <!-- 'canary' removed from eds - breaks envoy  revision="89c068ddbdb8ac5e513351c8772efc924787aad1"-->
+    <project path="src/envoy-api" name="lyft/envoy-api"/>
 
     <project path="src/googleapis/src" name="googleapis/googleapis" />
-
     <project path="src/grpc_transcoding" remote="github" name="grpc-ecosystem/grpc-httpjson-transcoding"/>
     <!--
     Forks from unary branch, using same envoy
@@ -67,7 +65,9 @@
     <project path="prebuilts/linux-x86/pi" remote="github" name="raspberrypi/tools"/>
 
     <project path="tools/bazelbuild/rules_go" remote="github" name="bazelbuild/rules_go" />
+    <project path="tools/bazelbuild/rules_docker" remote="github" name="bazelbuild/rules_docker" />
 
+    <project path="src/github.com/googo/protobuf" name="gogo/protobuf"/>
     <!--
      Go projects and dependencies
     -->
