@@ -1,29 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-    <!-- Stable version -->
+    <!-- updated version -->
 
     <remote name="istio" fetch="git://github.com/istio/"/>
     <remote name="github" fetch="git://github.com/"/>
     <remote name="costinm" fetch="git://github.com/costinm/"/>
     <remote name="google" fetch="git://github.com/google"/>
     <remote name="boringssl" fetch="https://boringssl.googlesource.com"/>
+    <!-- Only for uuid, mixerclient depends on it -->
+    <remote name="linux" fetch="git://git.kernel.org/pub/scm"/>
 
-    <default remote="costinm" revision="master" sync-j="4"  />
+    <default remote="github" revision="master" sync-j="4"  />
 
-    <project path="." name="istio-build" revision="envoy13"/>
+    <project path="." name="istio-build" remote="costinm"/>
 
     <!-- Istio 0.1 is build out of proxy 466a7346f3c2c2f3cbcb0f1a74d2cd9ac6a565fe
          which uses envoy a8c446aafa2af08f525dbab2b052f25834b78139 (may 26)
          1.3.0 is last tagged version, on may 17.
  -->
-    <project name="envoy" revision="v130-32bit"/>
+    <project name="envoy" remote="costinm" />
 
+    <!-- 'canary' removed from eds - breaks envoy -->
+    <project path="src/envoy-api" name="lyft/envoy-api"
+        revision="89c068ddbdb8ac5e513351c8772efc924787aad1"/>
+
+    <project path="src/googleapis/src" name="googleapis/googleapis" />
+
+    <project path="src/grpc_transcoding" remote="github" name="grpc-ecosystem/grpc-httpjson-transcoding"/>
     <!--
     Forks from unary branch, using same envoy
      -->
-    <project name="mixerclient" path="src/mixerclient" remote="costinm" revision="costin"/>
+    <project name="mixerclient" path="src/mixerclient" remote="istio"/>
+    <project name="utils/util-linux/util-linux" path="src/util-linux" remote="linux"/>
 
-    <project path="src/proxy" name="proxy" revision="costin" />
+    <project path="src/proxy" remote="istio" name="proxy" />
 
     <project path="src/protobuf" remote="google" name="protobuf" revision="refs/tags/v3.2.0"/>
 
@@ -63,9 +73,9 @@
     -->
     <project path="src/istio.io/istio" remote="github" name="istio/istio"/>
     <project path="src/istio.io/pilot" remote="github" name="istio/pilot"/>
-    <project path="src/istio.io/mixer" remote="github" name="costinm/mixer"/>
+    <project path="src/istio.io/mixer" remote="istio" name="mixer"/>
     <project path="src/istio.io/auth" remote="github" name="istio/auth"/>
-    <project path="src/istio.io/api" remote="github" name="costinm/api" revision="costin"/>
+    <project path="src/istio.io/api" remote="istio" name="api" />
 
     <!-- Dependencies for pilot/mixer -->
 
