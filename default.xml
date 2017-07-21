@@ -31,7 +31,7 @@
     <project name="mixerclient" path="src/mixerclient" remote="istio"/>
     <project name="utils/util-linux/util-linux" path="src/util-linux" remote="linux"/>
 
-    <project path="src/proxy" remote="istio" name="proxy" />
+    <project path="src/proxy" name="costinm/proxy" />
 
    <!--
     <project path="src/protobuf" name="google/protobuf" revision="refs/tags/v3.2.0"/>
@@ -78,7 +78,7 @@
     <project path="src/istio.io/pilot" remote="github" name="istio/pilot"/>
     <project path="src/istio.io/mixer" remote="istio" name="mixer"/>
     <project path="src/istio.io/auth" remote="github" name="istio/auth"/>
-    <project path="src/istio.io/api" remote="istio" name="api" />
+    <project path="src/istio.io/api" name="costinm/api" />
 
     <!-- Dependencies for pilot/mixer -->
 
