@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote fetch="https://boringssl.googlesource.com" name="boringssl"/>
+  <remote fetch="git://github.com/costinm/" name="costinm"/>
+  <remote fetch="git://github.com/" name="github"/>
+  <remote fetch="git://github.com/google" name="google"/>
+  <remote fetch="git://github.com/istio/" name="istio"/>
+  <remote fetch="git://git.kernel.org/pub/scm" name="linux"/>
+  
+  <default remote="github" revision="master" sync-j="4"/>
+  
+  <project name="bazelbuild/rules_docker" path="tools/bazelbuild/rules_docker" revision="146c9b946159a8fafbf81723c40652f192ee56ac" upstream="master"/>
+  <project name="bazelbuild/rules_go" path="tools/bazelbuild/rules_go" revision="cd8680a5050aa207ed0ba6b1d0b424f8e9a41772" upstream="master"/>
+  <project name="bombela/backward-cpp" path="src/backward" revision="857bc8fc311e6e990539be691be8c8a6f98b1be5" upstream="master"/>
+  <project name="boringssl" path="src/boringssl" remote="boringssl" revision="8d8d1ca8e1f1a34a2167f59e2b0ca09c623b160f" upstream="chromium-stable-with-bazel"/>
+  <project name="c-ares/c-ares" path="third_party/cares/cares" revision="7691f773af79bf75a62d1863fd0f13ebf9dc51b1" upstream="refs/tags/cares-1_12_0"/>
+  <project name="costinm/api" path="src/istio.io/api" revision="16a6916daa4f74e6ba11db8f00a6bea6d34b49c7" upstream="master"/>
+  <project name="costinm/istio-build" path="." revision="9fc278acf7940e48120cd65602448bba46a73e92" upstream="master"/>
+  <project name="costinm/proxy" path="src/proxy" revision="d25a92a50349f1f08792d75e2f13c9ddeb0ee858" upstream="master"/>
+  <project name="eile/tclap" path="third_party/tclap" revision="f41dcb5ce3d063c9fe95623193bba693338f3edb" upstream="master"/>
+  <project name="gabime/spdlog" path="src/spdlog" revision="b75da32f4d5e5c1b3f26a0a9ed0cdd0f24e5eb0f" upstream="master"/>
+  <project name="gogo/protobuf" path="src/github.com/gogo/protobuf" revision="7b6c6391c4ff245962047fc1e2c6e08b1cdfa0e8" upstream="master"/>
+  <project name="google/protobuf" path="src/protobuf" revision="5532abc15b97f3489183b266b41844306052a3fa" upstream="refs/tags/v3.3.2"/>
+  <project name="googleapis/googleapis" path="src/googleapis/src" revision="75c3a512bce1ac7c2e9a1dd8b2c38ac3f1f5697c" upstream="master"/>
+  <project name="grpc-ecosystem/grpc-httpjson-transcoding" path="src/grpc_transcoding" revision="fd163f55fef2e3e1a39ffca75968167bea384673" upstream="master"/>
+  <project name="istio/auth" path="src/istio.io/auth" revision="ba482475e166c208f43ec003861d677e58af78ac" upstream="master"/>
+  <project name="istio/istio" path="src/istio.io/istio" revision="11051dfaa7aee34f3b8bf60a733bf32aa5db297d" upstream="master"/>
+  <project name="istio/pilot" path="src/istio.io/pilot" revision="5b55952f9c27d6a29a8cbcdcbd522de1cff44e9e" upstream="master"/>
+  <project name="libevent/libevent" path="third_party/libevent/src" revision="e83443ec67d45447296c2ce320620a07c88e1d32" upstream="master"/>
+  <project name="lightstep/lightstep-tracer-common" path="src/lightstep/lightstep-tracer-common" revision="cbbecd671c1ae1f20ae873c5da688c8c14d04ec3"/>
+  <project name="lightstep/lightstep-tracer-cpp" path="src/lightstep" revision="f1dc8f3dfd529350e053fd21273e627f409ae428" upstream="refs/tags/v0_36"/>
+  <project name="lyft/envoy" path="envoy" revision="fb221833bb2d883406be7e560e9a96866f1948c4" upstream="master"/>
+  <project name="lyft/envoy-api" path="src/envoy-api" revision="14bc3924479a18baf6fcc03656a3ed6b9e3bbd7b" upstream="master"/>
+  <project name="lyft/envoy-filter-example" path="src/envoy-filter-example" revision="8442ed70a5fc55662ca1a6d45fde2d23a4cb4adf" upstream="master"/>
+  <project name="lyft/ratelimit" path="src/github.com/lyft/ratelimit" revision="3c04887a4d472e033349b2aa8749b0483691ba30" upstream="master"/>
+  <project name="miloyip/rapidjson" path="src/rapidjson" revision="c34e3dfc72b6c90775aad132f27c29bbf1d79222" upstream="master"/>
+  <project name="mixer" path="src/istio.io/mixer" remote="istio" revision="8f9b32f2a8391a8a0f2cf09e6009d3e891651d07" upstream="master"/>
+  <project name="mixerclient" path="src/mixerclient" remote="istio" revision="cdb7ba9594a652728df7316fb4bf251a6658fa7c" upstream="master"/>
+  <project name="nghttp2/nghttp2" path="third_party/nghttp2/src" revision="cc289972fc809ee7216a970314dcc8eabcae881a" upstream="master"/>
+  <project name="nodejs/http-parser" path="third_party/http-parser/src" revision="1b79abab34d4763c0467f1173a406ad2817c1635" upstream="master"/>
+  <project name="raspberrypi/tools" path="prebuilts/linux-x86/pi" revision="0e906ebc527eab1cdbf7adabff5b474da9562e9f" upstream="master"/>
+  <project name="utils/util-linux/util-linux" path="src/util-linux" remote="linux" revision="aaf133265f9403801931b44c2ea29783f22eb374" upstream="master"/>
+</manifest>
