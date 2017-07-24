@@ -4,6 +4,8 @@
 
     <remote name="istio" fetch="git://github.com/istio/"/>
     <remote name="github" fetch="git://github.com/"/>
+    <remote name="gopkg" fetch="git://gopkg.in"/>
+
     <remote name="costinm" fetch="git://github.com/costinm/"/>
     <remote name="google" fetch="git://github.com/google"/>
     <remote name="boringssl" fetch="https://boringssl.googlesource.com"/>
@@ -24,11 +26,11 @@
     <project path="src/envoy-api" name="lyft/envoy-api"/>
 
     <project path="src/googleapis/src" name="googleapis/googleapis" />
-    <project path="src/grpc_transcoding" remote="github" name="grpc-ecosystem/grpc-httpjson-transcoding"/>
+    <project path="src/grpc_transcoding" name="grpc-ecosystem/grpc-httpjson-transcoding"/>
     <!--
     Forks from unary branch, using same envoy
      -->
-    <project name="mixerclient" path="src/mixerclient" remote="istio"/>
+    <project name="istio/mixerclient" path="src/mixerclient" />
     <project name="utils/util-linux/util-linux" path="src/util-linux" remote="linux"/>
 
     <project path="src/proxy" name="costinm/proxy" />
@@ -43,51 +45,74 @@
     <project path="src/boringssl" remote="boringssl" name="boringssl" revision="chromium-stable-with-bazel" />
 
 
-    <project path="third_party/cares/cares" remote="github" name="c-ares/c-ares" revision="refs/tags/cares-1_12_0" />
+    <project path="third_party/cares/cares" name="c-ares/c-ares" revision="refs/tags/cares-1_12_0" />
 
     <!-- Stable APIs/build from master. Releases should set the tested tags -->
-    <project name="nodejs/http-parser" path="third_party/http-parser/src" remote="github"/>
+    <project name="nodejs/http-parser" path="third_party/http-parser/src" />
 
-    <project path="src/lightstep" remote="github" name="lightstep/lightstep-tracer-cpp" revision="refs/tags/v0_36"/>
-    <project path="src/lightstep/lightstep-tracer-common" remote="github" name="lightstep/lightstep-tracer-common" revision="cbbecd671c1ae1f20ae873c5da688c8c14d04ec3"    />
+    <project path="src/lightstep" name="lightstep/lightstep-tracer-cpp" revision="refs/tags/v0_36"/>
+    <project path="src/lightstep/lightstep-tracer-common" name="lightstep/lightstep-tracer-common" revision="cbbecd671c1ae1f20ae873c5da688c8c14d04ec3"    />
 
-    <project path="src/spdlog" remote="github" name="gabime/spdlog"/>
+    <project path="src/spdlog" name="gabime/spdlog"/>
 
-    <project path="third_party/libevent/src" remote="github" name="libevent/libevent"/>
+    <project path="third_party/libevent/src" name="libevent/libevent"/>
 
-    <project path="third_party/nghttp2/src" remote="github" name="nghttp2/nghttp2"/>
+    <project path="third_party/nghttp2/src" name="nghttp2/nghttp2"/>
 
-    <project path="third_party/tclap" remote="github" name="eile/tclap"/>
+    <project path="third_party/tclap" name="eile/tclap"/>
 
-    <project path="src/backward" remote="github" name="bombela/backward-cpp"/>
+    <project path="src/backward" name="bombela/backward-cpp"/>
 
-    <project path="src/rapidjson" remote="github" name="miloyip/rapidjson" />
+    <project path="src/rapidjson" name="miloyip/rapidjson" />
 
     <!-- Toolchains for cross compilation -->
     <!-- Path name similar with android -->
-    <project path="prebuilts/linux-x86/pi" remote="github" name="raspberrypi/tools"/>
+    <project path="prebuilts/linux-x86/pi" name="raspberrypi/tools"/>
 
-    <project path="tools/bazelbuild/rules_go" remote="github" name="bazelbuild/rules_go" />
-    <project path="tools/bazelbuild/rules_docker" remote="github" name="bazelbuild/rules_docker" />
+    <project path="tools/bazelbuild/rules_go" name="bazelbuild/rules_go" />
+    <project path="tools/bazelbuild/rules_docker" name="bazelbuild/rules_docker" />
 
-    <project path="src/github.com/gogo/protobuf" name="gogo/protobuf"/>
-    <!--
-     Go projects and dependencies
-    -->
-    <project path="src/istio.io/istio" remote="github" name="istio/istio"/>
-    <project path="src/istio.io/pilot" remote="github" name="istio/pilot"/>
-    <project path="src/istio.io/mixer" remote="istio" name="mixer"/>
-    <project path="src/istio.io/auth" remote="github" name="istio/auth"/>
+
+
     <project path="src/istio.io/api" name="costinm/api" />
 
     <!-- Dependencies for pilot/mixer -->
 
-
     <!--
      Useful examples from envoy, not used in the build but for reference
     -->
-    <project path="src/envoy-filter-example" remote="github" name="lyft/envoy-filter-example"/>
-    <project path="src/github.com/lyft/ratelimit" remote="github" name="lyft/ratelimit"/>
+    <project path="src/envoy-filter-example" name="lyft/envoy-filter-example"/>
+
+    <!--
+     Go projects and dependencies. godep could be used instead or in addition.
+     Most deps are still in bazel workspace, if agreement is reached we need to start moving them.
+    -->
+    <project path="go/src/istio.io/api" name="istio/api"/>
+    <project path="go/src/istio.io/istio" name="istio/istio"/>
+    <project path="go/src/istio.io/pilot" name="istio/pilot"/>
+    <project path="go/src/istio.io/mixer"  name="istio/mixer"/>
+    <project path="go/src/istio.io/auth" name="istio/auth"/>
+    <project path="go/src/github.com/gogo/protobuf" name="gogo/protobuf"/>
+    <project path="go/src/github.com/lyft/ratelimit" name="lyft/ratelimit"/>
+
+    <project path="go/src/k8s.io/kubernetes"  name="kubernetes/kubernetes"/>
+    <!--  Apr 4, 2017 - pilot uses APIs that have changed -->
+    <project path="go/src/k8s.io/client-go"  name="kubernetes/client-go" revision="4e221f82e2ad6e61bd6190602de9c3400d79f1aa"/>
+    <project path="go/src/k8s.io/apimachinery"  name="kubernetes/apimachinery" revision="20e10d54608f05c3059443a6c0afb9979641e88d"/>
+    <project path="go/src/k8s.io/ingress"  name="kubernetes/ingress" revision="7f3763590a681011eedc4b14a80a97240dea644c"/>
+
+    <project path="go/src/github.com/pkg/errors"  name="pkg/errors"/>
+    <project path="go/src/github.com/davecgh/go-spew"  name="davecgh/go-spew"/>
+    <project path="go/src/github.com/emicklei/go-restful"  name="emicklei/go-restful"/>
+    <project path="go/src/github.com/ghodss/yaml"  name="ghodss/yaml"/>
+    <project path="go/src/github.com/golang/glog"  name="golang/glog"/>
+    <project path="go/src/github.com/golang/protobuf"  name="golang/protobuf"/>
+    <project path="go/src/github.com/google/gofuzz"  name="google/gofuzz"/>
+    <project path="go/src/github.com/hashicorp/go-multierror"  name="hashicorp/go-multierror"/>
+    <project path="go/src/github.com/howeyc/fsnotify"  name="howeyc/fsnotify"/>
+    <project path="go/src/github.com/spf13/cobra"  name="spf13/cobra"/>
+    <project path="go/src/github.com/spf13/pflag"  name="spf13/pflag"/>
+    <project path="go/src/gopkg.in/yaml.v2"  revision="v2" name="go-yaml/yaml"/>
 
 
 </manifest>
