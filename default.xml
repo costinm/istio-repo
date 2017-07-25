@@ -9,6 +9,7 @@
     <remote name="costinm" fetch="git://github.com/costinm/"/>
     <remote name="google" fetch="git://github.com/google"/>
     <remote name="boringssl" fetch="https://boringssl.googlesource.com"/>
+    <remote name="golang" fetch="https://golang.org"/>
     <!-- Only for uuid, mixerclient depends on it -->
     <remote name="linux" fetch="git://git.kernel.org/pub/scm"/>
 
@@ -113,6 +114,7 @@
     <project path="go/src/github.com/spf13/cobra"  name="spf13/cobra"/>
     <project path="go/src/github.com/spf13/pflag"  name="spf13/pflag"/>
     <project path="go/src/gopkg.in/yaml.v2"  revision="v2" name="go-yaml/yaml"/>
+    <project path="go/src/golang.org/x/time" name="golang/time"/>
 
 
 </manifest>
