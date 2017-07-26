@@ -21,9 +21,7 @@
          which uses envoy a8c446aafa2af08f525dbab2b052f25834b78139 (may 26)
          1.3.0 is last tagged version, on may 17.
  -->
-    <project name="lyft/envoy" path="envoy"/>
-
-    <!-- 'canary' removed from eds - breaks envoy  revision="89c068ddbdb8ac5e513351c8772efc924787aad1"-->
+    <project path="envoy" name="lyft/envoy" />
     <project path="src/envoy-api" name="lyft/envoy-api"/>
 
     <project path="src/googleapis/src" name="googleapis/googleapis" />
@@ -77,6 +75,7 @@
 
     <project path="src/istio.io/api" name="costinm/api" />
 
+
     <!-- Dependencies for pilot/mixer -->
 
     <!--
@@ -84,13 +83,14 @@
     -->
     <project path="src/envoy-filter-example" name="lyft/envoy-filter-example"/>
 
+    <project path="src/envoy-remote-filter" name="costinm/envoy-remote-filter" />
     <!--
      Go projects and dependencies. godep could be used instead or in addition.
      Most deps are still in bazel workspace, if agreement is reached we need to start moving them.
     -->
     <project path="go/src/istio.io/api" name="istio/api"/>
     <project path="go/src/istio.io/istio" name="istio/istio"/>
-    <project path="go/src/istio.io/pilot" name="istio/pilot"/>
+    <project path="go/src/istio.io/pilot" name="costinm/pilot"/>
     <project path="go/src/istio.io/mixer"  name="istio/mixer"/>
     <project path="go/src/istio.io/auth" name="istio/auth"/>
     <project path="go/src/github.com/gogo/protobuf" name="gogo/protobuf"/>
