@@ -19,9 +19,13 @@
 
     <!-- Istio 0.1 is build out of proxy 466a7346f3c2c2f3cbcb0f1a74d2cd9ac6a565fe
          which uses envoy a8c446aafa2af08f525dbab2b052f25834b78139 (may 26)
-         1.3.0 is last tagged version, on may 17.
+
+         Envoy 1.3.0 is last tagged version, on may 17.
+
+         Tip of tree:
+         <project path="envoy" name="lyft/envoy" />
  -->
-    <project path="envoy" name="lyft/envoy" />
+    <project path="envoy" name="lyft/envoy" revision="d56c6d27059da43a3859976eaeba53afff55f425"/>
     <project path="src/envoy-api" name="lyft/envoy-api"/>
 
     <project path="src/googleapis/src" name="googleapis/googleapis" />
@@ -32,16 +36,18 @@
     <project name="istio/mixerclient" path="src/mixerclient" />
     <project name="utils/util-linux/util-linux" path="src/util-linux" remote="linux"/>
 
-    <project path="src/proxy" name="costinm/proxy" />
+    <project path="src/proxy" name="costinm/proxy" remote="rawvm" />
 
    <!--
     <project path="src/protobuf" name="google/protobuf" revision="refs/tags/v3.2.0"/>
 -->
     <project path="src/protobuf" name="google/protobuf" revision="refs/tags/v3.3.2"/>
 
-<!--    <project path="src/boringssl" remote="github" name="google/boringssl" revision="chromium-stable" />
-  -->
+<!--
+    Jul 31 commit breaks bazel
     <project path="src/boringssl" remote="boringssl" name="boringssl" revision="chromium-stable-with-bazel" />
+ -->
+    <project path="src/boringssl" remote="boringssl" name="boringssl" revision="8d8d1ca8e1f1a34a2167f59e2b0ca09c623b160f" />
 
 
     <project path="third_party/cares/cares" name="c-ares/c-ares" revision="refs/tags/cares-1_12_0" />
@@ -91,7 +97,7 @@
     <project path="go/src/istio.io/api" name="istio/api"/>
     <project path="go/src/istio.io/istio" name="istio/istio"/>
     <project path="go/src/istio.io/pilot" name="costinm/pilot"/>
-    <project path="go/src/istio.io/mixer"  name="costinm/mixer" revision="raw"/>
+    <project path="go/src/istio.io/mixer"  name="istio/mixer"/>
     <project path="go/src/istio.io/auth" name="istio/auth"/>
     <project path="go/src/github.com/gogo/protobuf" name="gogo/protobuf"/>
     <project path="go/src/github.com/lyft/ratelimit" name="lyft/ratelimit"/>
