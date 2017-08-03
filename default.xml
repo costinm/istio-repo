@@ -91,7 +91,7 @@
     <project path="go/src/istio.io/api" name="istio/api"/>
     <project path="go/src/istio.io/istio" name="istio/istio"/>
     <project path="go/src/istio.io/pilot" name="costinm/pilot"/>
-    <project path="go/src/istio.io/mixer"  name="costinm/mixer" revision="raw"/>
+    <project path="go/src/istio.io/mixer"  name="istio/mixer" />
     <project path="go/src/istio.io/auth" name="istio/auth"/>
     <project path="go/src/github.com/gogo/protobuf" name="gogo/protobuf"/>
     <project path="go/src/github.com/lyft/ratelimit" name="lyft/ratelimit"/>
