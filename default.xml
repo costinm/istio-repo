@@ -36,7 +36,7 @@
     <project name="istio/mixerclient" path="src/mixerclient" />
     <project name="utils/util-linux/util-linux" path="src/util-linux" remote="linux"/>
 
-    <project path="src/proxy" name="costinm/proxy" remote="rawvm" />
+    <project path="src/proxy" name="costinm/proxy" revision="rawvm" />
 
    <!--
     <project path="src/protobuf" name="google/protobuf" revision="refs/tags/v3.2.0"/>
