@@ -17,6 +17,10 @@
 
     <project path="." name="costinm/istio-build" />
 
+    <!-- Vendored and auto-generated files -->
+    <project path="go/src/istio.io" name="costinm/istio-pilot-vendor" />
+
+
     <!-- Istio 0.1 is build out of proxy 466a7346f3c2c2f3cbcb0f1a74d2cd9ac6a565fe
          which uses envoy a8c446aafa2af08f525dbab2b052f25834b78139 (may 26)
 
@@ -25,13 +29,13 @@
          Tip of tree:
          <project path="envoy" name="lyft/envoy" />
  -->
-    <project path="envoy" name="lyft/envoy" revision="d56c6d27059da43a3859976eaeba53afff55f425"/>
+    <project path="envoy" name="lyft/envoy" revision="a2a47b2e8072126b0f1d4128eca13759d9ae2155"/>
     <project path="src/envoy-api" name="lyft/envoy-api"/>
 
     <project path="src/googleapis/src" name="googleapis/googleapis" />
     <project path="src/grpc_transcoding" name="grpc-ecosystem/grpc-httpjson-transcoding"/>
     <project name="istio/mixerclient" path="src/mixerclient" />
-    <project path="src/proxy" name="costinm/proxy" revision="rawvm" />
+    <project path="src/proxy" name="istio/proxy"/>
 
     <project path="src/protobuf" name="google/protobuf" revision="refs/tags/v3.3.2"/>
 
