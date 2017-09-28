@@ -1,91 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-    <!-- updated version -->
-
-    <remote name="istio" fetch="git://github.com/istio/"/>
+    <!-- Git repositories -->
     <remote name="github" fetch="git://github.com/"/>
-    <remote name="gopkg" fetch="git://gopkg.in"/>
-
-    <remote name="costinm" fetch="git://github.com/costinm/"/>
-    <remote name="google" fetch="git://github.com/google"/>
+    <!-- Used to fetch boringssl sources -->
     <remote name="boringssl" fetch="https://boringssl.googlesource.com"/>
-    <remote name="golang" fetch="https://golang.org"/>
-    <!-- Only for uuid, mixerclient depends on it -->
-    <remote name="linux" fetch="git://git.kernel.org/pub/scm"/>
 
     <default remote="github" revision="master" sync-j="4"  />
 
+    <!-- Base build directory - should move to istio -->
     <project path="." name="costinm/istio-build" />
-
     <!-- Vendored and auto-generated files -->
     <project path="go/src/istio.io" name="costinm/istio-pilot-vendor" />
 
+    <!-- Istio go -->
+    <project path="go/src/istio.io/api" name="istio/api"/>
+    <project path="go/src/istio.io/istio" name="istio/istio"/>
+    <project path="go/src/istio.io/istio.github.io" name="istio/istio.github.io"/>
+    <project path="go/src/istio.io/pilot" name="istio/pilot"/>
+    <project path="go/src/istio.io/mixer"  name="istio/mixer" />
+    <project path="go/src/istio.io/auth" name="istio/auth"/>
+    <project path="go/src/istio.io/proxy" name="istio/proxy"/>
 
-    <!-- Istio 0.1 is build out of proxy 466a7346f3c2c2f3cbcb0f1a74d2cd9ac6a565fe
-         which uses envoy a8c446aafa2af08f525dbab2b052f25834b78139 (may 26)
-
-         Envoy 1.3.0 is last tagged version, on may 17.
-
-         Tip of tree:
-         <project path="envoy" name="lyft/envoy" />
- -->
-    <project path="envoy" name="lyft/envoy" revision="a2a47b2e8072126b0f1d4128eca13759d9ae2155"/>
-    <project path="src/envoy-api" name="lyft/envoy-api"/>
-
+    <!-- Native code (envoy, dependencies) in src/ directory -->
+    <project path="envoy" name="envoyproxy/envoy" revision="b02d8a9b5033a61a7b13d98999f5f00c4b85b6a4"/>
+    <project path="src/envoy-api" name="lyft/envoy-api" revision="9be6aff6da46e024af56cce20cb5d5d3184f19c5"/>
     <project path="src/googleapis/src" name="googleapis/googleapis" />
-    <project path="src/grpc_transcoding" name="grpc-ecosystem/grpc-httpjson-transcoding"/>
-    <project name="istio/mixerclient" path="src/mixerclient" />
-    <project path="src/proxy" name="istio/proxy"/>
+    <project path="src/grpc_transcoding" name="grpc-ecosystem/grpc-httpjson-transcoding" revision="e4f58aa07b9002befa493a0a82e10f2e98b51fc6"/>
+    <project path="src/mixerclient" name="istio/mixerclient"/>
 
-    <project path="src/protobuf" name="google/protobuf" revision="refs/tags/v3.3.2"/>
+    <project path="src/protobuf" name="google/protobuf" revision="refs/tags/v3.4.0"/>
+    <project path="src/fmt" name="fmtlib/fmt" />
+    <project path="src/yaml-cpp" name="jbeder/yaml-cpp"/>
 
-    <!-- Envoy deps -->
-<!--
+    <!--
     Jul 31 commit breaks bazel
     <project path="src/boringssl" remote="boringssl" name="boringssl" revision="chromium-stable-with-bazel" />
- -->
+    -->
     <project path="src/boringssl" remote="boringssl" name="boringssl" revision="8d8d1ca8e1f1a34a2167f59e2b0ca09c623b160f" />
-    <project path="third_party/cares/cares" name="c-ares/c-ares" revision="refs/tags/cares-1_12_0" />
-    <project name="nodejs/http-parser" path="third_party/http-parser/src" />
     <project path="src/lightstep" name="lightstep/lightstep-tracer-cpp" revision="refs/tags/v0_36"/>
     <project path="src/lightstep/lightstep-tracer-common" name="lightstep/lightstep-tracer-common" revision="cbbecd671c1ae1f20ae873c5da688c8c14d04ec3"    />
     <project path="src/spdlog" name="gabime/spdlog"/>
-    <project path="third_party/libevent/src" name="libevent/libevent"/>
-    <project path="third_party/nghttp2/src" name="nghttp2/nghttp2"/>
-    <project path="third_party/tclap" name="eile/tclap"/>
     <project path="src/backward" name="bombela/backward-cpp"/>
     <project path="src/rapidjson" name="miloyip/rapidjson" />
+    <project path="src/libevent/src" name="libevent/libevent"/>
+    <project path="src/nghttp2/src" name="nghttp2/nghttp2"/>
+    <project path="src/tclap" name="eile/tclap"/>
+    <project path="src/cares/cares" name="c-ares/c-ares" revision="refs/tags/cares-1_12_0" />
+    <project path="src/http-parser/src" name="nodejs/http-parser" />
+    <project path="src/xxhash" name="Cyan4973/xxHash" />
 
     <!-- Toolchains and libraries for cross compilation -->
     <!-- Path name similar with android
     <project path="prebuilts/linux-x86/pi" name="raspberrypi/tools"/>
-    <project name="utils/util-linux/util-linux" path="src/util-linux" remote="linux"/>
     -->
-
-    <project path="src/istio.io/api" name="costinm/api" />
-
-
-    <project path="tools/bazelbuild/rules_go" name="bazelbuild/rules_go" />
-    <project path="tools/bazelbuild/rules_docker" name="bazelbuild/rules_docker" />
 
     <!--
      Useful examples from envoy, not used in the build but for reference
-    -->
     <project path="src/envoy-filter-example" name="lyft/envoy-filter-example"/>
-
     <project path="src/envoy-remote-filter" name="costinm/envoy-remote-filter" />
     <project path="go/src/github.com/lyft/ratelimit" name="lyft/ratelimit"/>
-
-    <!--
-     Go projects and dependencies. godep could be used instead or in addition.
-     Most deps are still in bazel workspace, if agreement is reached we need to start moving them.
     -->
-    <project path="go/src/istio.io/api" name="istio/api"/>
-    <project path="go/src/istio.io/istio" name="istio/istio"/>
-    <project path="go/src/istio.io/pilot" name="costinm/pilot"/>
-    <project path="go/src/istio.io/mixer"  name="istio/mixer" />
-    <project path="go/src/istio.io/auth" name="istio/auth"/>
-
-    <!-- Dependencies for pilot/mixer are managed by go dep -->
-
 </manifest>
