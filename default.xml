@@ -19,7 +19,7 @@
     <project path="go/src/istio.io/pilot" name="istio/pilot"/>
     <project path="go/src/istio.io/mixer"  name="istio/mixer" />
     <project path="go/src/istio.io/auth" name="istio/auth"/>
-    <project path="go/src/istio.io/proxy" name="istio/proxy" revision="flat_build"/>
+    <project path="go/src/istio.io/proxy" name="istio/proxy" />
 
     <!-- Native code (envoy, dependencies) in src/ directory -->
     <project path="envoy" name="envoyproxy/envoy" revision="b02d8a9b5033a61a7b13d98999f5f00c4b85b6a4"/>
