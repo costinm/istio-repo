@@ -2,13 +2,12 @@
 <manifest>
     <!-- Git repositories -->
     <remote name="github" fetch="git://github.com/"/>
-
-    <!-- Used to fetch boringssl sources -->
-    <remote name="boringssl" fetch="https://boringssl.googlesource.com"/>
     <default remote="github" revision="master" sync-j="4"  />
 
     <!-- Base build directory - should move to istio -->
-    <project path="." name="costinm/istio-build" />
+    <project path="build" name="costinm/istio-build" >
+        <linkfile src="CMakeLists.txt" dest="./"/>
+    </project>
     <!-- Vendored and auto-generated files -->
     <project path="go/src/istio.io" name="costinm/istio-pilot-vendor" />
 
@@ -22,8 +21,8 @@
     <project path="go/src/istio.io/proxy" name="istio/proxy" />
 
     <!-- Native code (envoy, dependencies) in src/ directory -->
-    <project path="envoy" name="envoyproxy/envoy" revision="b02d8a9b5033a61a7b13d98999f5f00c4b85b6a4"/>
-    <project path="src/envoy-api" name="lyft/envoy-api" revision="9be6aff6da46e024af56cce20cb5d5d3184f19c5"/>
+    <project path="src/envoy" name="envoyproxy/envoy"/>
+    <project path="src/envoy-api" name="envoyproxy/envoy-api" />
     <project path="src/googleapis/src" name="googleapis/googleapis" />
     <project path="src/grpc_transcoding" name="grpc-ecosystem/grpc-httpjson-transcoding" revision="e4f58aa07b9002befa493a0a82e10f2e98b51fc6"/>
     <project path="src/mixerclient" name="istio/mixerclient"/>
@@ -32,6 +31,8 @@
     <project path="src/protobuf" name="google/protobuf" revision="refs/tags/v3.4.0"/>
     <project path="src/fmt" name="fmtlib/fmt" />
     <project path="src/yaml-cpp" name="jbeder/yaml-cpp"/>
+
+    <remote name="boringssl" fetch="https://boringssl.googlesource.com"/>
 
     <project path="src/boringssl" remote="boringssl" name="boringssl" revision="chromium-stable-with-bazel" />
     <project path="src/lightstep" name="lightstep/lightstep-tracer-cpp" revision="refs/tags/v0_36"/>
@@ -45,5 +46,6 @@
     <project path="src/cares/cares" name="c-ares/c-ares" revision="refs/tags/cares-1_12_0" />
     <project path="src/http-parser/src" name="nodejs/http-parser" />
     <project path="src/xxhash" name="Cyan4973/xxHash" />
+
 
 </manifest>
