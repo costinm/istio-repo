@@ -22,8 +22,8 @@
     <project path="go/src/istio.io/proxy" name="istio/proxy" />
 
     <!-- Native code (envoy, dependencies) in src/ directory -->
-    <project path="envoy" name="envoyproxy/envoy" revision="b02d8a9b5033a61a7b13d98999f5f00c4b85b6a4"/>
-    <project path="src/envoy-api" name="lyft/envoy-api" revision="9be6aff6da46e024af56cce20cb5d5d3184f19c5"/>
+    <project path="envoy" name="envoyproxy/envoy" />
+    <project path="src/envoy-api" name="lyft/envoy-api"/>
     <project path="src/googleapis/src" name="googleapis/googleapis" />
     <project path="src/grpc_transcoding" name="grpc-ecosystem/grpc-httpjson-transcoding" revision="e4f58aa07b9002befa493a0a82e10f2e98b51fc6"/>
     <project path="src/mixerclient" name="istio/mixerclient"/>
