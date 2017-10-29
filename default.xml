@@ -6,8 +6,12 @@
 
     <!-- Base build directory - should move to istio -->
     <project path="build" name="costinm/istio-build" >
-        <linkfile src="CMakeLists.txt" dest="./"/>
+        <linkfile src="CMakeLists.txt" dest="./CMakeLists.txt"/>
+        <linkfile src="Makefile" dest="./Makefile"/>
+        <linkfile src="WORKSPACE" dest="./WORKSPACE"/>
+
     </project>
+
     <!-- Vendored and auto-generated files -->
     <project path="go/src/istio.io" name="costinm/istio-pilot-vendor" />
 
@@ -18,7 +22,7 @@
     <project path="go/src/istio.io/pilot" name="istio/pilot"/>
     <project path="go/src/istio.io/mixer"  name="istio/mixer" />
     <project path="go/src/istio.io/auth" name="istio/auth"/>
-    <project path="go/src/istio.io/proxy" name="istio/proxy" />
+    <project path="src/proxy" name="istio/proxy" />
 
     <!-- Native code (envoy, dependencies) in src/ directory -->
     <project path="src/envoy" name="envoyproxy/envoy"/>
@@ -28,7 +32,7 @@
     <project path="src/mixerclient" name="istio/mixerclient"/>
     <project path="genfiles" name="costinm/istio-proxy-genfiles"/>
 
-    <project path="src/protobuf" name="google/protobuf" revision="refs/tags/v3.4.0"/>
+    <project path="src/protobuf" name="google/protobuf"/>
     <project path="src/fmt" name="fmtlib/fmt" />
     <project path="src/yaml-cpp" name="jbeder/yaml-cpp"/>
 
