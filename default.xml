@@ -8,18 +8,19 @@
     <default remote="github" revision="master" sync-j="4"  />
 
     <!-- Base build directory - should move to istio -->
-    <project path="." name="costinm/istio-build" />
+    <project path="build" name="costinm/istio-build" />
+
     <!-- Vendored and auto-generated files -->
     <project path="go/src/istio.io" name="costinm/istio-pilot-vendor" />
 
     <!-- Istio go -->
-    <project path="go/src/istio.io/api" name="istio/api"/>
-    <project path="go/src/istio.io/istio" name="istio/istio"/>
-    <project path="go/src/istio.io/istio.github.io" name="istio/istio.github.io"/>
-    <project path="go/src/istio.io/pilot" name="istio/pilot"/>
-    <project path="go/src/istio.io/mixer"  name="istio/mixer" />
-    <project path="go/src/istio.io/auth" name="istio/auth"/>
-    <project path="go/src/istio.io/proxy" name="istio/proxy"/>
+    <project path="go/src/istio.io/api" name="istio/api" revision="release-0.2"/>
+    <project path="go/src/istio.io/istio" name="istio/istio" revision="release-0.2"/>
+    <project path="go/src/istio.io/istio.github.io" name="istio/istio.github.io" />
+    <project path="go/src/istio.io/pilot" name="istio/pilot" revision="release-0.2"/>
+    <project path="go/src/istio.io/mixer"  name="istio/mixer" revision="release-0.2"/>
+    <project path="go/src/istio.io/auth" name="istio/auth" revision="release-0.2"/>
+    <project path="go/src/istio.io/proxy" name="istio/proxy" revision="release-0.2"/>
 
     <!-- Native code (envoy, dependencies) in src/ directory -->
     <project path="envoy" name="envoyproxy/envoy" revision="b02d8a9b5033a61a7b13d98999f5f00c4b85b6a4"/>
