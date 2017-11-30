@@ -34,9 +34,9 @@
     <project path="genfiles" name="costinm/istio-proxy-genfiles"/>
 
     <!-- Native code (envoy, dependencies) in src/ directory -->
-    <project path="src/proxy" name="istio/proxy" />
+    <project path="src/proxy" name="costinm/proxy" branch="meshex"/>
 
-    <project path="src/envoy" name="envoyproxy/envoy"/>
+    <project path="src/envoy" name="costinm/envoy" branch="32bit-part2"/>
     <project path="src/envoy-api" name="envoyproxy/envoy-api" />
 
     <project path="src/googleapis/src" name="googleapis/googleapis" />
@@ -45,6 +45,9 @@
     <project path="src/protobuf" name="google/protobuf"/>
     <project path="src/fmt" name="fmtlib/fmt" />
     <project path="src/yaml-cpp" name="jbeder/yaml-cpp"/>
+
+    <project path="src/abseil-cpp" name="costinm/abseil-cpp" branch="costin"/>
+    <project path="src/cctz" name="google/cctz"/>
 
     <project path="src/boringssl" remote="boringssl" name="boringssl" revision="chromium-stable-with-bazel" />
 
@@ -60,4 +63,5 @@
     <project path="src/cares" name="c-ares/c-ares" revision="refs/tags/cares-1_12_0" />
     <project path="src/http-parser" name="nodejs/http-parser" />
     <project path="src/xxhash" name="Cyan4973/xxHash" />
+    <project path="src/googletest" name="google/googletest"/>
 </manifest>
