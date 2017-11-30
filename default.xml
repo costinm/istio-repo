@@ -7,7 +7,10 @@
 
     <default remote="github" revision="master" sync-j="4"  />
 
-    <project path="build" name="istio/test-infra"/>
+    <!-- Istio global build -->
+    <project path="build" name="istio/global-build">
+         <linkfile src="Makefile" dest="./Makefile"/>
+    </project>
 
     <!-- Base build directory - should move to istio -->
     <project path="build/contrib" name="costinm/istio-build" >
@@ -24,6 +27,8 @@
     <project path="go/src/istio.io/api" name="istio/api"/>
     <project path="go/src/istio.io/istio" name="istio/istio"/>
     <project path="go/src/istio.io/istio.github.io" name="istio/istio.github.io"/>
+    <project path="go/src/istio.io/test-infra" name="istio/test-infra"/>
+    <project path="go/src/istio.io/fortio" name="istio/fortio"/>
 
     <!-- Generated files for native. -->
     <project path="genfiles" name="costinm/istio-proxy-genfiles"/>
