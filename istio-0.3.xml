@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote fetch="https://boringssl.googlesource.com" name="boringssl"/>
+  <remote fetch="git://github.com/" name="github"/>
+  
+  <default remote="github" revision="master" sync-j="4"/>
+  
+  <project name="Cyan4973/xxHash" path="src/xxhash" revision="15c3512d691d9212c1834f69fe72bbd3596b953d" upstream="master"/>
+  <project name="bombela/backward-cpp" path="src/backward" revision="2ccee82e0159190550a0b00536fdca4be2aa04e2" upstream="master"/>
+  <project name="boringssl" path="src/boringssl" remote="boringssl" revision="15529ed42a509f414f84ebd875962c28f654c05c" upstream="chromium-stable-with-bazel"/>
+  <project name="c-ares/c-ares" path="src/cares" revision="7691f773af79bf75a62d1863fd0f13ebf9dc51b1" upstream="refs/tags/cares-1_12_0"/>
+  <project name="costinm/abseil-cpp" path="src/abseil-cpp" revision="3ac9a14d16c144926a24b1a3ac024c0c78c0defd" upstream="master"/>
+  <project name="costinm/istio-build" path="build/contrib" revision="6bb87d134cf03943f6e91c7d674ec85ceed42b77" upstream="master">
+    <linkfile dest="./CMakeLists.txt" src="CMakeLists.txt"/>
+    <linkfile dest="./Makefile" src="Makefile"/>
+    <linkfile dest="./WORKSPACE" src="WORKSPACE"/>
+    <linkfile dest="./build/envsetup.sh" src="envsetup.sh"/>
+  </project>
+  <project name="costinm/istio-pilot-vendor" path="go/src/istio.io/istio/vendor" revision="ed27aaa85d7c180c5e9eff12f03fd2a9cca19f4e" upstream="master"/>
+  <project name="costinm/istio-proxy-genfiles" path="genfiles" revision="b0ee4cba2376b606a602f6d85f08832237c80f80" upstream="master"/>
+  <project name="costinm/proxy" path="src/proxy" revision="6e05df4254fbbb7ec3798c24bb75e5c38d9481b2" upstream="master"/>
+  <project name="eile/tclap" path="src/tclap" revision="f41dcb5ce3d063c9fe95623193bba693338f3edb" upstream="master"/>
+  <project name="envoyproxy/envoy" path="src/envoy" revision="e308b903fb39b97fa553cf06d7a6e08559de7668" upstream="master"/>
+  <project name="envoyproxy/envoy-api" path="src/envoy-api" revision="ec38af2de5f1c218dfb59a5592fe007ad7fee785" upstream="master"/>
+  <project name="fmtlib/fmt" path="src/fmt" revision="f9c97de46b9914c86366ddcb3474a36e654cbd42" upstream="master"/>
+  <project name="gabime/spdlog" path="src/spdlog" revision="799ba2a57bb16b921099bd9ab64a513e4ebe4217" upstream="master"/>
+  <project name="google/cctz" path="src/cctz" revision="a25e2ba67b51c2e564966dee81a235ec52991ceb" upstream="master"/>
+  <project name="google/googletest" path="src/googletest" revision="d175c8bf823e709d570772b038757fadf63bc632" upstream="master"/>
+  <project name="google/protobuf" path="src/protobuf" revision="0289dd8f90b79ad3d2376aadec4538f9ac8b0417" upstream="master"/>
+  <project name="googleapis/googleapis" path="src/googleapis/src" revision="5fdd81af96752d7f825d25609d2659e468f1a059" upstream="master"/>
+  <project name="grpc-ecosystem/grpc-httpjson-transcoding" path="src/grpc_transcoding" revision="e4f58aa07b9002befa493a0a82e10f2e98b51fc6"/>
+  <project name="istio/api" path="go/src/istio.io/api" revision="9eade234131cff639403d1ab3b7bc4072deaf7c3" upstream="master"/>
+  <project name="istio/fortio" path="go/src/istio.io/fortio" revision="c268f32f04735f89ab246a438c41d513e2336dee" upstream="master"/>
+  <project name="istio/global-build" path="build" revision="1fb58be6c2efe6c881f8d7e041dcbeb934416962" upstream="master">
+    <linkfile dest="./Makefile" src="Makefile"/>
+  </project>
+  <project name="istio/istio" path="go/src/istio.io/istio" revision="24385215066f2e52b239736e39b821828885848c" upstream="master"/>
+  <project name="istio/istio.github.io" path="go/src/istio.io/istio.github.io" revision="293633f8e061ba2dc7b7ab696547bb95b822d6dc" upstream="master"/>
+  <project name="istio/mixerclient" path="src/mixerclient" revision="5a16b9f3c80ab59aaeba278e9bb1adf71059eb5c" upstream="master"/>
+  <project name="istio/test-infra" path="go/src/istio.io/test-infra" revision="470646bb988771c3bac655b1acf9aa70d68db5e4" upstream="master"/>
+  <project name="jbeder/yaml-cpp" path="src/yaml-cpp" revision="86ae3a5aa7e2109d849b2df89176d6432a35265d" upstream="master"/>
+  <project name="libevent/libevent" path="src/libevent" revision="c2c08e0203da93938fe35234fa3a1be4d1c3c2e1" upstream="master"/>
+  <project name="lightstep/lightstep-tracer-common" path="src/lightstep-tracer-common" revision="cbbecd671c1ae1f20ae873c5da688c8c14d04ec3"/>
+  <project name="lightstep/lightstep-tracer-cpp" path="src/lightstep" revision="f1dc8f3dfd529350e053fd21273e627f409ae428" upstream="refs/tags/v0_36"/>
+  <project name="miloyip/rapidjson" path="src/rapidjson" revision="17ae6ffa857173c25708e61610121bc908c0a6cd" upstream="master"/>
+  <project name="nghttp2/nghttp2" path="src/nghttp2" revision="97f1735cf5a15ae107aeed9bbf8d06ad7dc5a3c2" upstream="master"/>
+  <project name="nodejs/http-parser" path="src/http-parser" revision="b11de0f5c65bcc1b906f85f4df58883b0c133e7b" upstream="master"/>
+</manifest>

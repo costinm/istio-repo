@@ -42,7 +42,7 @@
     <project path="src/googleapis/src" name="googleapis/googleapis" />
     <project path="src/grpc_transcoding" name="grpc-ecosystem/grpc-httpjson-transcoding" revision="e4f58aa07b9002befa493a0a82e10f2e98b51fc6"/>
     <project path="src/mixerclient" name="istio/mixerclient"/>
-    <project path="src/protobuf" name="google/protobuf"/>
+    <project path="src/protobuf" name="google/protobuf" revision="0289dd8f90b79ad3d2376aadec4538f9ac8b0417" />
     <project path="src/fmt" name="fmtlib/fmt" />
     <project path="src/yaml-cpp" name="jbeder/yaml-cpp"/>
 
