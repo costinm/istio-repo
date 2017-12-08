@@ -36,7 +36,7 @@
     <!-- Native code (envoy, dependencies) in src/ directory -->
     <project path="src/proxy" name="costinm/proxy" branch="meshex"/>
 
-    <project path="src/envoy" name="costinm/envoy" branch="32bit-part2"/>
+    <project path="src/envoy" name="envoyproxy/envoy" />
     <project path="src/envoy-api" name="envoyproxy/envoy-api" />
 
     <project path="src/googleapis/src" name="googleapis/googleapis" />
