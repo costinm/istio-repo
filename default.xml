@@ -34,7 +34,7 @@
     <project path="genfiles" name="costinm/istio-proxy-genfiles"/>
 
     <!-- Native code (envoy, dependencies) in src/ directory -->
-    <project path="src/proxy" name="costinm/proxy" branch="meshex"/>
+    <project path="src/proxy" name="istio/proxy"/>
 
     <!-- Istio Proxy doesn't yet compile with more recent versions (access log not updated)
         This should match istio 0.3.1.
@@ -55,7 +55,7 @@
     <project path="src/fmt" name="fmtlib/fmt" />
     <project path="src/yaml-cpp" name="jbeder/yaml-cpp"/>
 
-    <project path="src/abseil-cpp" name="costinm/abseil-cpp" branch="costin"/>
+    <project path="src/abseil-cpp" name="abseil/abseil-cpp"/>
     <project path="src/cctz" name="google/cctz"/>
 
     <project path="src/boringssl" remote="boringssl" name="boringssl" revision="chromium-stable-with-bazel" />
