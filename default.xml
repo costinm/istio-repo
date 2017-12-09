@@ -36,7 +36,16 @@
     <!-- Native code (envoy, dependencies) in src/ directory -->
     <project path="src/proxy" name="costinm/proxy" branch="meshex"/>
 
-    <project path="src/envoy" name="envoyproxy/envoy" />
+    <!-- Istio Proxy doesn't yet compile with more recent versions (access log not updated)
+        This should match istio 0.3.1.
+    -->
+    <project path="src/envoy" name="envoyproxy/envoy" revision="e593fedc3232fbb694f3ec985567a2c7dff05212"/>
+
+    <!-- Note that api is not pinned - it is supposed to be backward
+    compatible and have stable API, and it is only used for regenerating the
+    cc.proto files. If regeneration doesn't work due to new files not included in
+    the pinned envoy bazel, checkout the matching SHA from envoy/bazel/...
+    -->
     <project path="src/envoy-api" name="envoyproxy/envoy-api" />
 
     <project path="src/googleapis/src" name="googleapis/googleapis" />
