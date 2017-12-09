@@ -58,7 +58,12 @@
     <project path="src/abseil-cpp" name="abseil/abseil-cpp"/>
     <project path="src/cctz" name="google/cctz"/>
 
-    <project path="src/boringssl" remote="boringssl" name="boringssl" revision="chromium-stable-with-bazel" />
+    <project path="src/boringssl" remote="boringssl" name="boringssl"
+             revision="15529ed42a509f414f84ebd875962c28f654c05c" />
+
+    <!-- Appears to be broken (Dec 7) - using an older version until fixed
+                 revision="chromium-stable-with-bazel" />
+      -->
 
     <project path="src/lightstep" name="lightstep/lightstep-tracer-cpp" revision="refs/tags/v0_36"/>
     <project path="src/lightstep-tracer-common" name="lightstep/lightstep-tracer-common" revision="cbbecd671c1ae1f20ae873c5da688c8c14d04ec3"/>
